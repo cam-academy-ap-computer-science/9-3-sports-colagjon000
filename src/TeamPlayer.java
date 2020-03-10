@@ -13,5 +13,17 @@ public class TeamPlayer extends Player{
 	public String toString () {
 		return super.toString() + ", Rank: " + rank + ", Team: " + teamName + ", City: " + homeCity;
 	}
+	
+	public int getRank() {
+		return rank;
+	}
+	
+	public String getTeam () {
+		return teamName;
+	}
+	
+	public String getCity() {
+		return homeCity;
+	}
 
 }
