@@ -1,4 +1,5 @@
 
-public class soccerPlayer extends Player {
+public class soccerPlayer extends TeamPlayer {
+
 
 }
