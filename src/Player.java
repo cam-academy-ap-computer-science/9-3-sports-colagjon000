@@ -1,5 +1,5 @@
 import java.time.LocalDate;
-
+//Player Class -- Sets age, salary, name, country born and representing, and birthday
 public class Player {
 	private int age;
 	private int averageSalary;
@@ -12,12 +12,15 @@ public class Player {
 	private int dayBorn;
 	LocalDate curDate = LocalDate.now();
 	
-	public Player (int aS, String fN, String lN, String coBo, String coRe) {
+	public Player (int aS, String fN, String lN, String coBo, String coRe, int monthBorn, int dayBorn, int yearBorn) {
 		averageSalary = aS;
 		firstName = fN;
 		lastName = lN;
 		countryBorn = coBo;
 		countryRepresent = coRe;
+		this.monthBorn = monthBorn;
+		this.dayBorn = dayBorn;
+		this.yearBorn = yearBorn;
 		//getAge
 		if (curDate.getMonthValue() > monthBorn) {
 			age = curDate.getYear() - yearBorn;
@@ -39,7 +42,7 @@ public class Player {
 	}
 	
 	public String toString() {
-		return "Age: " + age + ", YearEarnings: " + averageSalary + ", Name: " + firstName + " " + lastName + ", Birthday " + this.birthdayToString() + ", CountryBorn: "
+		return "Name: " + firstName + " " + lastName + " Age: " + age + ", YearEarnings: " + averageSalary + " USD, Birthday " + this.birthdayToString() + ", CountryBorn: "
 				+ countryBorn + ", Country Representing: " + countryRepresent;
 	}
 	

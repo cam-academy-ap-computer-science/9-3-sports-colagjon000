@@ -1,16 +1,11 @@
 
 public class soccerPlayer extends TeamPlayer {
+
 	private String position;
 	private int careerGoals;
-
-	public soccerPlayer(int aS, String fN, String lN, String coBo, String coRe, int rank, String teamName,
-			String homeCity) {
-		super(aS, fN, lN, coBo, coRe, rank, teamName, homeCity);
-	}
-	
-	public soccerPlayer(int aS, String fN, String lN, String coBo, String coRe, int rank, String teamName,
-			String homeCity, String position, int careerGoals) {
-		super(aS, fN, lN, coBo, coRe, rank, teamName, homeCity);
+	public soccerPlayer(int aS, String fN, String lN, String coBo, String coRe, int monthBorn, int dayBorn,
+			int yearBorn, int rank, String teamName, String homeCity, String position, int careerGoals) {
+		super(aS, fN, lN, coBo, coRe, monthBorn, dayBorn, yearBorn, rank, teamName, homeCity);
 		this.position = position;
 		this.careerGoals = careerGoals;
 	}
