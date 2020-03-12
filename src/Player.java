@@ -1,5 +1,9 @@
 import java.time.LocalDate;
 //Player Class -- Sets age, salary, name, country born and representing, and birthday
+//Add functionality where age is automatically determined based on current date -- IMPORT java.time
+//	- Age -- if past the birth date -- subtract from current year
+//		  -- if not past the birth date -- subtract from current year and subtract 1
+// 		  -- if months match, compare dates and follow same rule as months.
 public class Player {
 	private int age;
 	private int averageSalary;
@@ -10,7 +14,7 @@ public class Player {
 	private int yearBorn;
 	private int monthBorn;
 	private int dayBorn;
-	LocalDate curDate = LocalDate.now();
+	private LocalDate curDate = LocalDate.now();
 	
 	public Player (int aS, String fN, String lN, String coBo, String coRe, int monthBorn, int dayBorn, int yearBorn) {
 		averageSalary = aS;
@@ -41,8 +45,19 @@ public class Player {
 		
 	}
 	
+	public boolean equals (Object o) {
+		if (o instanceof Player) {
+			Player other = (Player) o;
+			return (age == other.age) && (monthBorn == other.monthBorn) && (dayBorn == other.dayBorn) && (yearBorn == other.yearBorn) && (firstName.equals(other.firstName))
+					&& (lastName.equals(other.lastName) && (countryBorn.equals(other.countryBorn)) && (countryRepresent.equals(other.countryRepresent) 
+							&& (averageSalary == other.averageSalary)));
+		} else {
+			return false;
+		}
+	}
+	
 	public String toString() {
-		return "Name: " + firstName + " " + lastName + " Age: " + age + ", YearEarnings: " + averageSalary + " USD, Birthday " + this.birthdayToString() + ", CountryBorn: "
+		return "Name: " + firstName + " " + lastName + ", Age: " + age + ", Year Earnings: " + averageSalary + " USD, Birthday " + this.birthdayToString() + ", Country Born: "
 				+ countryBorn + ", Country Representing: " + countryRepresent;
 	}
 	

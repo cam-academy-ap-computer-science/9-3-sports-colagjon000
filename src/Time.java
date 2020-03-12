@@ -1,4 +1,12 @@
 //small class to define a swimming time
+//set event type, minutes, seconds, and milliseconds
+//add constraint so milliseconds is never over 99
+//add constraint so seconds is never over 59
+//add display functionality where single digits appear to have a 0 in front similar to how swimming times work
+//	- however does not change raw value of milliseconds or seconds -- keep original stored in private variables
+
+//Add two constructors as a number of events never reach above a minute -- unnecessary fields
+
 public class Time {
 	private String event;
 	private int minutes;

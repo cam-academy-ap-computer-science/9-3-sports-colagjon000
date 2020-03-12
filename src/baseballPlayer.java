@@ -7,8 +7,8 @@ public class baseballPlayer extends TeamPlayer {
 	private int careerRuns;
 	
 	public baseballPlayer(int aS, String fN, String lN, String coBo, String coRe, int monthBorn, int dayBorn,
-			int yearBorn, int rank, String teamName, String homeCity, double batAvg, int careerRuns) {
-		super(aS, fN, lN, coBo, coRe, monthBorn, dayBorn, yearBorn, rank, teamName, homeCity);
+			int yearBorn, int rank, String teamName, String position, double batAvg, int careerRuns) {
+		super(aS, fN, lN, coBo, coRe, monthBorn, dayBorn, yearBorn, rank, teamName, position);
 		this.batAvg = batAvg;
 		this.careerRuns = careerRuns;
 	}
