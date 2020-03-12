@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 
 //individual athlete -- does not extend from teamPlayer.java
 //adds swimming statistics such as stroke, list of bestTimes, and has world record
@@ -27,6 +28,30 @@ public class swimmer extends Player{
 			return "All PRs: " + PRs;
 		}
 	}
+	
+	public boolean equals (Object o) {
+		if (super.equals(o) == true) {
+			if (o instanceof swimmer) {
+				swimmer s = (swimmer) o;
+				return (mainStroke.equals(s.mainStroke) && (hasWorldRecord == s.hasWorldRecord) );
+			} else {
+				return false;
+			}
+		} else {
+			return false;
+		}
+	}
+	//only compares times
+	public boolean compareTimes (swimmer s) {
+		ArrayList <Time> otherTemp = new ArrayList<>(s.PRs);
+		ArrayList <Time> thisTemp = new ArrayList<>(this.PRs);
+		Collections.sort(otherTemp, Time.timeByEvent);
+		Collections.sort(thisTemp, Time.timeByEvent);
+		
+		
+	}
+	
+	//TODO print sorted times for testing
 	
 	public String toString() {
 		return super.toString() + ", Main Stroke: " + mainStroke + ", Holds World Record? " + hasWorldRecord;

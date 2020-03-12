@@ -65,6 +65,8 @@ public class Player {
 		return monthBorn + "/" + dayBorn + "/" + yearBorn;
 	}
 	
+	//access methods
+	
 	public int getAge() {
 		return age;
 	}

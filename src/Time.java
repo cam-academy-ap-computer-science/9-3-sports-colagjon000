@@ -6,6 +6,7 @@
 //	- however does not change raw value of milliseconds or seconds -- keep original stored in private variables
 
 //Add two constructors as a number of events never reach above a minute -- unnecessary fields
+import java.util.*;
 
 public class Time {
 	private String event;
@@ -42,6 +43,26 @@ public class Time {
 			seconds = seconds % 60;
 		}
 	}
+	//compares contents of Time
+	public boolean equals(Object o) {
+		if (o instanceof Time) {
+			Time t = (Time) o;
+			return (event.equals(t.event)) && (minutes == t.minutes) && (seconds == t.seconds) && (milliseconds == t.milliseconds);
+		} else {
+			return false;
+		}
+	}
+	
+	//sorts order of array and compares for only content, not order of events which may have been changed accidentally.
+	  public static Comparator <Time> timeByEvent = new Comparator <Time>() {
+		  public int compare(Time t1, Time t2) {
+			   String timeEvent1 = t1.getEvent().toUpperCase();
+			   String timeEvent2 = t2.getEvent().toUpperCase();
+
+			   return timeEvent1.compareTo(timeEvent2);
+		  }
+		  
+	  };
 	
 	public String toString() {
 		//change seconds and milliseconds into a string so 0 can be placed in front of the integer without being parsed out
@@ -75,6 +96,9 @@ public class Time {
 	
 	public int getMilliseconds() {
 		return milliseconds;
+	}
+	public String getEvent() {
+		return event;
 	}
 
 }
