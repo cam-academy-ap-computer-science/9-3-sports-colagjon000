@@ -12,6 +12,7 @@ public class swimmer extends Player{
 		super(aS, fN, lN, coBo, coRe, monthBorn, dayBorn, yearBorn);
 		this.mainStroke = mainStroke;
 		this.hasWorldRecord = hasWorldRecord;
+		
 	}
 	
 	public void addPR (Time t) {
@@ -45,10 +46,16 @@ public class swimmer extends Player{
 	public boolean compareTimes (swimmer s) {
 		ArrayList <Time> otherTemp = new ArrayList<>(s.PRs);
 		ArrayList <Time> thisTemp = new ArrayList<>(this.PRs);
+		if (otherTemp.size() != thisTemp.size()) {
+			return false;
+		}
+		
 		Collections.sort(otherTemp, Time.timeByEvent);
 		Collections.sort(thisTemp, Time.timeByEvent);
 		
-		
+		for (int i = 0; i < otherTemp.size() - 1; i ++) {
+			
+		}
 	}
 	
 	//TODO print sorted times for testing

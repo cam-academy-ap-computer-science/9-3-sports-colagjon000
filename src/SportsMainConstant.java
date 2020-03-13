@@ -9,6 +9,11 @@ public class SportsMainConstant {
 		Nathan.addPR(new Time("100 Free", 0, 44, 10));
 		Nathan.addPR(new Time("50 Free", 0, 19, 01));
 		
+		swimmer Nathan2 = new swimmer(1000000, "Nathan", "Adrian", "United States", "United States", 12, 7, 1988, "Freestyle", false);
+		Nathan.addPR(new Time("200 Free", 1, 36, 22));
+		Nathan.addPR(new Time("100 Free", 0, 44, 10));
+		Nathan.addPR(new Time("50 Free", 0, 19, 01));
+		
 		swimmer CalebDressel = new swimmer (1000000, "Caleb", "Dressel", "United States", "United States", 8, 16, 1996, "Freestyle", true);
 		CalebDressel.addPR(new Time("50 Free", 0, 17, 63));
 		TeamPlayer anotherDressel = new TeamPlayer (100000, "Caleb", "Dressel", "United States", "United States", 8, 16, 1996, 1, "thunder", "free");
@@ -23,6 +28,8 @@ public class SportsMainConstant {
 		System.out.println();
 		System.out.println(Swimming.getRoster());
 		System.out.println(anotherDressel.equals(twoDressel));
+		System.out.println();
+		System.out.println(Nathan.compareTimes(Nathan2));
 	}
 
 }
