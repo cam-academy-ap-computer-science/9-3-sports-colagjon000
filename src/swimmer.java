@@ -34,15 +34,17 @@ public class swimmer extends Player{
 		if (super.equals(o) == true) {
 			if (o instanceof swimmer) {
 				swimmer s = (swimmer) o;
-				return (mainStroke.equals(s.mainStroke) && (hasWorldRecord == s.hasWorldRecord) );
+				return (mainStroke.equals(s.mainStroke) && (hasWorldRecord == s.hasWorldRecord) && this.compareTimes(s));
 			} else {
 				return false;
 			}
 		} else {
 			return false;
 		}
+		
 	}
-	//only compares times
+	
+	//only compares times -- even if the order of the times is different in the array
 	public boolean compareTimes (swimmer s) {
 		ArrayList <Time> otherTemp = new ArrayList<>(s.PRs);
 		ArrayList <Time> thisTemp = new ArrayList<>(this.PRs);
@@ -54,11 +56,14 @@ public class swimmer extends Player{
 		Collections.sort(thisTemp, Time.timeByEvent);
 		
 		for (int i = 0; i < otherTemp.size() - 1; i ++) {
-			
+			if (!(otherTemp.get(i).equals(thisTemp.get(i)))) {
+				return false;
+			}
 		}
+		
+		return true;
 	}
 	
-	//TODO print sorted times for testing
 	
 	public String toString() {
 		return super.toString() + ", Main Stroke: " + mainStroke + ", Holds World Record? " + hasWorldRecord;
