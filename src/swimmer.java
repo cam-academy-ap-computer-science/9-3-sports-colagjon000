@@ -30,6 +30,8 @@ public class swimmer extends Player{
 		}
 	}
 	
+	//compares all fields and the contents of the arraylist of times. 
+	//times can be in different order, just simply checks the contents, and the correlating times the swimmer has
 	public boolean equals (Object o) {
 		if (super.equals(o) == true) {
 			if (o instanceof swimmer) {
@@ -44,7 +46,9 @@ public class swimmer extends Player{
 		
 	}
 	
-	//only compares times -- even if the order of the times is different in the array
+	//only compares times -- even if the order of the times is different in the array -- used in testing and the equals method, but can be used later
+	//sorts times alphabetically by event name, then compares
+	//kicks out first if array sizes are different to save 'time'
 	public boolean compareTimes (swimmer s) {
 		ArrayList <Time> otherTemp = new ArrayList<>(s.PRs);
 		ArrayList <Time> thisTemp = new ArrayList<>(this.PRs);
@@ -63,7 +67,7 @@ public class swimmer extends Player{
 		
 		return true;
 	}
-	
+	//getters and setters
 	
 	public String toString() {
 		return super.toString() + ", Main Stroke: " + mainStroke + ", Holds World Record? " + hasWorldRecord;

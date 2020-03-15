@@ -1,5 +1,6 @@
 //baseball player -- subclass of teamPlayer and player
 //adds baseball statistics such as batting average and career runs
+//nothing too special
 
 public class baseballPlayer extends TeamPlayer {
 
@@ -13,9 +14,21 @@ public class baseballPlayer extends TeamPlayer {
 		this.careerRuns = careerRuns;
 	}
 	
+	public boolean equals (Object o) {
+		if (super.equals(o) == true) {
+			if (o instanceof baseballPlayer) {
+				baseballPlayer temp = (baseballPlayer) o;
+				return (this.batAvg == temp.batAvg) && (this.careerRuns == temp.careerRuns);
+			}
+		}
+		
+		return false;
+	}
+	
 	public String toString() {
 		return super.toString() + ", Batting Average: " + batAvg + ", Career Runs: " + careerRuns;
 	}
+	//getters and setters
 	
 	public double getBatAvg() {
 		return batAvg;

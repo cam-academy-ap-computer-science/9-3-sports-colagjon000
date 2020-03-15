@@ -13,6 +13,7 @@ public class Time {
 	private int minutes;
 	private int seconds;
 	private int milliseconds;
+	//constructor with minutes
 	public Time (String event, int minutes, int seconds, int milliseconds) {
 		this.event = event;
 		this.minutes = minutes;
@@ -28,7 +29,7 @@ public class Time {
 		}
 		
 	}
-	
+	//constructor without minutes
 	public Time (String event, int seconds, int milliseconds) {
 		this.event = event;
 		minutes = 0;
@@ -53,7 +54,7 @@ public class Time {
 		}
 	}
 	
-	//sorts order of array and compares for only content, not order of events which may have been changed accidentally.
+	//sorts order of array and compares for only content, not order of events which may have been changed accidentally. -- used in swimmer.java later
 	  public static Comparator <Time> timeByEvent = new Comparator <Time>() {
 		  public int compare(Time t1, Time t2) {
 			   String timeEvent1 = t1.getEvent().toUpperCase();
@@ -85,7 +86,7 @@ public class Time {
 			return event + ": " + minutes + ":" + secondsString + "." + milliString;
 		}
 	}
-	
+	//getters and setters
 	public int getMinutes() {
 		return minutes;
 	}

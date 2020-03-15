@@ -1,4 +1,5 @@
-
+//done for now, all minimums should work
+//Most likely will keep editing this slowly to see how i can implement just to make a GUI and experiment with that with input fields and etc...
 public class SportsMainConstant {
 
 	public static void main(String[] args) {
@@ -17,7 +18,7 @@ public class SportsMainConstant {
 		swimmer CalebDressel = new swimmer (1000000, "Caleb", "Dressel", "United States", "United States", 8, 16, 1996, "Freestyle", true);
 		CalebDressel.addPR(new Time("50 Free", 0, 17, 63));
 		TeamPlayer anotherDressel = new TeamPlayer (100000, "Caleb", "Dressel", "United States", "United States", 8, 16, 1996, 1, "thunder", "free");
-		soccerPlayer twoDressel = new soccerPlayer (100000, "Caleb", "Dressel", "United States", "United States", 8, 16, 1996, 1, "thunder", "free", 10);
+		soccerPlayer twoDressel = new soccerPlayer (100000, "Caleb", "Dressel", "United States", "United States", 8, 16, 1996, 1, "thunder", "free", 10, 10);
 		
 		IndividualSport Swimming = new IndividualSport("Swimming");
 		Swimming.addAthlete(Nathan);

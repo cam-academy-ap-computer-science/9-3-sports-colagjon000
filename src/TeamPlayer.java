@@ -10,6 +10,19 @@ public class TeamPlayer extends Player{
 		this.position = position;
 	}
 	
+	public boolean equals (Object o) {
+		if (super.equals(o) == true) {
+			if (o instanceof TeamPlayer) {
+				TeamPlayer temp = (TeamPlayer) o;
+				return (this.rank == temp.rank) && (this.teamName.equals(temp.teamName)) && (this.position.equals(temp.position));
+			} else {
+				return false;
+			}
+		} else {
+			return false;
+		}
+	}
+	
 	public String toString () {
 		return super.toString() + ", Rank: " + rank + ", Team: " + teamName + ", Position" + position;
 	}
